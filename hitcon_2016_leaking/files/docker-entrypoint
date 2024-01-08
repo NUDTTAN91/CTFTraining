@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sed -i "s/4nother_h34rtbleed_in_n0dejs/$FLAG/" /app/config.js
+
+export FLAG=not_flag
+FLAG=not_flag
+
+node /app/main.js

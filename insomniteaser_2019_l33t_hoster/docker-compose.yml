@@ -1,0 +1,8 @@
+version: "2"
+services:
+  l33t-hoster:
+    build: .
+    environment:
+      - FLAG=flag{test_flag}
+    ports:
+      - "127.0.0.1:3095:80"

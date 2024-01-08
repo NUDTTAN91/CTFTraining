@@ -1,0 +1,13 @@
+# Hitcon 2017 SSRFme
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: ctftraining/hitcon_2017_ssrfme
+    ports:
+      - "127.0.0.1:8303:80"
+    environment:
+      - FLAG=flag{flag_test}
+    restart: always

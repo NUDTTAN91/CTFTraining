@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: ctftraining/asis_2019_unicorn_shop
+    restart: always
+    environment:
+      - FLAG=flag{flag_test}
+    ports:
+      - "127.0.0.1:6732:6732"

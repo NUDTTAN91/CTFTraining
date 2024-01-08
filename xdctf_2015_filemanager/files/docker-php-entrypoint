@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo $FLAG > /flag_emmmmmmmmm
+export FLAG=not_flag
+FLAG=not_flag
+
+php-fpm &
+
+nginx &
+
+mysqld_safe &
+
+tail -F /var/log/nginx/error.log /var/log/nginx/access.log

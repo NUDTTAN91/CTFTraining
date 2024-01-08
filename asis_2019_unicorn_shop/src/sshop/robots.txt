@@ -1,0 +1,4 @@
+Disallow: /robots.txt
+Disallow: /settings.py
+Disallow: /admin
+Disallow: /Manager

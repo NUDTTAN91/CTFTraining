@@ -1,0 +1,12 @@
+# 第六届全国网络安全大赛 XDCTF 2015 线下某题
+version: "2"
+
+services:
+
+  web:
+    image: ctftraining/xdctf_2015_filemanager
+    restart: always
+    ports:
+      - "127.0.0.1:8081:80"
+    environment:
+      - FLAG=flag{flag_test}

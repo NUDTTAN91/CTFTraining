@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"><!--Ah,really important,seriously. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Unicorn shop</title>
+    <!-- Don't be frustrated by the same view,we've changed the challenge content.-->
+    <!-- Bootstrap core CSS -->
+    <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ static_url('css/jumbotron-narrow.css') }}" rel="stylesheet">
+</head>
+<!--We still have some surprise for admin.password-->
+<body>
+
+<div class="container">
+
+    {% try %}
+    {% if success %}
+    <div class="alert alert-success alert-dismissable">
+        操作成功。
+    </div>
+    {%end%}
+    {% if successmessage %}
+    <div class="alert alert-success alert-dismissable">
+        {{successmessage}}
+    </div>
+    {%end%}
+    {% except %}
+    {% end %}
+
+    {% try %}
+    {% if danger %}
+    <div class="alert alert-danger alert-dismissable">
+        操作失败。
+    </div>
+    {% end %}
+    {% if dangermessage %}
+    <div class="alert alert-danger alert-dismissable">
+        {{dangermessage}}
+    </div>
+    {%end%}
+    {% except %}
+    {% end %}
+    {% block body %}{% end %}
+
+</div> <!-- /container -->
+</body>
+</html>

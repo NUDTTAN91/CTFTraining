@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="row marketing">
+
+    <img src="static/timg.jpg" class="img-thumbnail">
+    <div class="alert alert-success alert-dismissable">
+        Welcome to the Unicorn shop.<br/>
+        "Money has never made man happy,nor will it;there is nothing in its nature to produce happiness.The more of it
+        one has the more one wants."--Benjamin Franklin
+    </div>
+    <div class="commodity-list">
+        <table class="table">
+            <tr>
+                <th>Item ID</th>
+                <th>Price</th>
+                <th>English</th>
+                <th>Spanish</th>
+                <th>German</th>
+                <th>Russian</th>
+            </tr>
+            {% for data in commoditys %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{ data.price }}</td>
+                <td>{{ data.english }}</td>
+                <td>{{ data.spanish }}</td>
+                <td>{{ data.german }}</td>
+                <td>{{ data.russian }}</td>
+            </tr>
+            {% end %}
+        </table>
+
+    </div>
+
+    <label>Purchase Unicorn</label>
+    <form class="form-inline" role="form" action="/charge" method="post">
+
+        <div class="form-group">
+            <label class="sr-only" for="name">Item ID</label>
+            <input type="text" class="form-control" id="id" name="id" placeholder="Item ID">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="name">Price</label>
+            <input type="text" class="form-control" id="name" name="price" placeholder="Price">
+        </div>
+        <button type="submit" class="btn btn-default">Purchase!</button>
+    </form>
+</div>
+
+{% end %}

@@ -1,0 +1,13 @@
+# hitcon 2016 Leaking
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: ctftraining/hitcon_2016_leaking
+    restart: always
+    environment:
+      - FLAG=flag{flag_test}
+    ports:
+      - "127.0.0.1:8300:3000"

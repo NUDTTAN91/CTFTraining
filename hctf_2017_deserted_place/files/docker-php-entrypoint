@@ -1,0 +1,14 @@
+#!/bin/sh
+
+sed -i "s/hctf{S0m3_iz_fun_m3thod3ed4rod}/$FLAG/" /var/www/html/class/class.php
+
+export FLAG=not_flag
+FLAG=not_flag
+
+php-fpm &
+
+nginx &
+
+mysqld_safe &
+
+python /root/boy.py

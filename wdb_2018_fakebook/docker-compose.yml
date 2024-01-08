@@ -1,0 +1,12 @@
+# 网鼎杯 2018 fakebook
+version: "2"
+
+services:
+
+  web:
+    image: ctftraining/wdb_2018_fakebook
+    restart: always
+    ports:
+      - "127.0.0.1:8306:80"
+    environment:
+      - FLAG=flag{flag_test}
